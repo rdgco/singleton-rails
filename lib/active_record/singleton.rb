@@ -23,7 +23,7 @@ module ActiveRecord
         self.id = singleton.id if singleton
 
         # Update if a singleton record is found, otherwise insert one
-        result = singleton ? _update_record(*args, &block) : _create_record(*args, &block)
+        result = singleton ? _update_record(*args, &block) : _create_record(&block)
         result != false
       end
     end
